@@ -33,14 +33,12 @@ export class JsonTable extends React.Component<TableProps, {}> {
         let caption = this.props.caption ? <caption>{this.props.caption}</caption> : null;
 
         let table = <div>
-            <div style={{position: "relative", overflow: "hidden" }}>
-                <table className={this.className} key={'jt-table'}>
-                    {caption}
-                    {header}
-                    <GridBody key={'jt-body'} settings={this.settings} columns={this.columns} rows={this.props.rows} onClickRow={this.props.onClickRow} onClickCell={this.props.onClickCell}/>
-                    <GridFooter key={'jt-footer'}/>
-                </table>
-            </div>
+            <table className={this.className} key={'jt-table'}>
+                {caption}
+                {header}
+                <GridBody key={'jt-body'} settings={this.settings} columns={this.columns} rows={this.props.rows} onClickRow={this.props.onClickRow} onClickCell={this.props.onClickCell}/>
+                <GridFooter key={'jt-footer'}/>
+            </table>
         </div>;
 
         return this.settings.freezeHeader ?
